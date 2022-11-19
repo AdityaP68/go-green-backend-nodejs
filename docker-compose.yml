@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  # Node Container
+  app:
+    container_name: docker-node-mongo
+    restart: always
+    build: .
+    ports:
+      - '8080:8080'
+    #links:
+    depends_on:
+      - mongo_db
+
+  # MongoDB container
+  mongo_db:
+    container_name: mongo_container
+    image: mongo:latest
+    # restart: always
+    volumes:
+      - mongo_db:/data/db
+    ports:
+      - 27017:27017
+
+volumes:
+  mongo_db: {}
+
+

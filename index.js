@@ -6,7 +6,7 @@ const routes = require('./routes/route')
 
 //npm run dev <--- use this command in terminal for dev 
 
-const PORT = 8000 || process.env.PORT
+const PORT = 8080 || process.env.PORT
 const app = express()
 
 //middleware register
